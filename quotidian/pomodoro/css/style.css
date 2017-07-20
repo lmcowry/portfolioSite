@@ -1,0 +1,16 @@
+.changeItToCursive {
+    font-family: 'Herr Von Muellerhoff', cursive;
+}
+
+h1{
+    font-size: 500%;
+}
+
+#pomClockTime, #pomClockStats {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 300%;
+}
+
+#pomClockTime {
+    color: #d9534f;
+}

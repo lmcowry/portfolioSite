@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MindVData Tutorial 3</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- just used for the navbar -->
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <div class="container main-content">
+            <div id="winStatement"></div>
+            <div class="eachOldGuess"></div>
+
+            <br>
+
+            <form id="guessSubmit">
+
+                    <input id="guessAt0Input" class="col-xs-1" type="text" size="1" value=""/>
+                    <input id="guessAt1Input" class="col-xs-1" type="text" size="1" value=""/>
+                    <input id="guessAt2Input" class="col-xs-1" type="text" size="1" value=""/>
+                    <button id="submit-btn" class="btn">Submit</button>
+
+                <div id="errorStatement"></div>
+            </form>
+            <br>
+            <p>
+                Not yet very functional on mobile devices<br><br>
+
+                Tutorial (3/4) mode: guessing three answers, each made up of three colors.<br>
+                The colors can be repeated<br>
+                Possible colors: r g b c y m <br> <br>
+
+                You are given clues to help get the answer faster <br>
+                The ! is for HOW MANY right color, right spots<br>
+                The ? is for HOW MANY right color, wrong spots<br> <br>
+
+                A 0? would mean that of the 3 answers, 0 answers<br>
+                have that color right there<br>
+                The right most number is for HOW MANY answers <br>
+                start with the first two colors of the guess <br> <br>
+
+                Goal: guess all three answers one at a time<br> <br>
+
+                <a href="game.html">Click here to skip to the game</a><br>
+            </p>
+
+        </div> <!--CONTAINER DIV FOR MAIN CONTENT -->
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">Christian Lowry</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#bio">Bio</a></li>
+                <li><a href="../resources/resume9may17.pdf">Resume</a></li>
+                <li><a href="#">MindVData</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <script type="text/javascript" src="js/inputColorer.js"></script>
+        <script src="js/tutorial3.js"></script>
+    </body>
+</html>

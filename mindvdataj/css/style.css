@@ -1,0 +1,10 @@
+.main-content {
+    text-align: left;
+    font-family: monospace;
+}
+
+input {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}

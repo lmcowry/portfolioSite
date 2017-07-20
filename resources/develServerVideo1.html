@@ -1,0 +1,224 @@
+<h2>Make a Local Development Server for Free in 30 Minutes</h2>
+
+<p><a target="_blank" href="https://www.youtube.com/watch?v=HFTnlfCuKag">YouTube video</a></p>
+
+<p>
+So I spent all day learning how to do this, and I hope that this video will save you a lot of time. This is my first ever YouTube video: I figured I&rsquo;ve been using resources like these for pretty much my whole life, it&rsquo;s now time to give back.</p>
+
+<p>This is for anyone who wants to run a local development server from a virtual machine. You&rsquo;ll create a webpage on your regular computer, send it to your server on your virtual machine, and then you&rsquo;ll be able to see that webpage on a browser in your regular computer.</p>
+
+<p>You might be wondering &ldquo;why bother with a development server at all? Why not just write my files on my computer, test them out on my web browser, and then send them off to my production server?&rdquo;</p>
+
+<p>One reason that you might want a local development server in addition to your computer and your production server is that sometimes what runs on your computer, does not run the same way on your server. Having this middle man step of the local development server gives us another way to test the code we write and how it displays on the internet.</p>
+
+<p>The other reason that you might want a local development server in addition to your computer and your production server is that you want as little downtime on your production server as possible. What if the new file you uploaded onto the production server messes it up to the point where the whole server fails? Now nobody can get on your website. Having that local development server will help reduce the number of these kinds of problems.</p>
+
+<p>Please email or comment on this video if there are any suggestions, questions, or corrections you have. I am definitely open to all of it.</p>
+
+<p></p>
+
+<p>
+Step by step:</p>
+
+<p>Ensure that you&rsquo;re connected to the internet for this whole process.</p>
+
+<p>
+Download Ubuntu Server (https://www.virtualbox.org/wiki/Downloads) and VirtualBox (https://www.ubuntu.com/download/server)</p>
+
+<p>Install VirtualBox</p>
+
+<p>Open it</p>
+
+<p>Within VirtualBox, go to Preferences, Network, Host-only Networks, Add a Host-only Network</p>
+
+<p>Adapter<br />
+192.168.56.1<br />
+255.255.255.0<br />
+blank<br />
+0</p>
+
+<p>DHCP Server<br />
+192.168.56.100<br />
+255.255.255.0<br />
+192.168.56.101<br />
+192.168.56.254</p>
+
+<p>Back in regular window for VirtualBox:<br />
+New<br />
+Name it<br />
+Default memory size<br />
+Dynamically allocated virtual drive<br />
+Create</p>
+
+<p>Now it&rsquo;s in your VirtualBox Manager<br />
+Right click on it, settings, Network, Adapter 2, Enable Network Adapter, Host-only Adapter, ensure that vboxnet0 (what we created earlier) is there<br />
+Still within this settings window, go to Storage, click on Controller: IDE&rsquo;s Empty, click on the disk within Attributes, navigate to your iso file, click Open, then OK</p>
+
+<p>Click Start (Normal Start)</p>
+
+<p>***********************************</p>
+
+<p>Those steps above needed to be exact for my system to work, so they probably need to be exact for yours to work. I don&rsquo;t know enough about this stuff to say otherwise.</p>
+
+<p>***********************************</p>
+
+<p>Press Enter to choose English for the operating system, then Enter again to choose the Installation</p>
+
+<p>Tab moves, space selects, enter activates buttons</p>
+
+<p>Enter for English for the installation process<br />
+Enter for United States location</p>
+
+<p>Detect keyboard layout? No<br />
+Enter for English<br />
+Enter for American English</p>
+
+<p>Configure the network: enp0s3. Probably will already be highlighted. Enter</p>
+
+<p>Give it a hostname (mine is hwitchmac). Enter<br />
+Give it a user. Full name. Enter<br />
+Username. Enter.<br />
+Password. Enter.<br />
+Reenter password. Enter.</p>
+
+<p>Encrypt your home directory? No.</p>
+
+<p>Ensure time zone is correct. Yes.</p>
+
+<p>Guided - use entire disk and set up LVM. Enter</p>
+
+<p>Partition disk. Ensure that it is the one that VirtualBox made (just check the file size. If around 10 GB, probably good). Enter.</p>
+
+<p>Write the changes to disks and configure LVM? Yes.</p>
+
+<p>Amount correct? Enter.</p>
+
+<p>Write the changes to disks? Yes</p>
+
+<p>Configure the package manager: HTTP proxy information. Leave blank, Continue.</p>
+
+<p>No automatic updates. Enter.</p>
+
+<p>Software selection. Use arrow keys to move and space to select. Standard system utilities will probably already be selected, so ensure that LAMP server and OpenSSH are also selected. Enter to continue.</p>
+
+<p>MySQL root user password (this is not your Ubuntu root user password). Write one, enter<br />
+Rewrite it, enter.</p>
+
+<p>Install the GRUB Boot Loader. Yes.</p>
+
+<p>Installation complete. Remove the drive (if it was on your USB or in a CD/DVD)(VirtualBox might be able to do this automatically, but why take the risk?). Continue.</p>
+
+<p>Ubuntu loads</p>
+
+<p>Login screen. Mine has the cursor on the first character, so if I type, it&rsquo;ll type over the prompt. Press enter, and that problem goes away. Type in your username, then password. The password hides the text on the screen, so type carefully. If you mess up, just press backspace until you think you&rsquo;ve deleted the whole password and try again. Or just press enter and get another prompt for the password. Once password is correct, press enter, and you should be logged in.</p>
+
+<p>Create a root password. Root is the administrator of the operating system, the one with a ton of access. You can probably give your regular username enough sudo access, but it&rsquo;s way easier to just use the root account. This is discouraged, because if you mess something up, it might mess up the system. But if that happens, just start all over. </p>
+
+<p>sudo passwd root<br />
+If prompted, first enter the password for the regular user<br />
+Then create a password for the root<br />
+Re enter it</p>
+
+<p>Log in via root by typing</p>
+
+<p>su</p>
+
+<p>And then typing your root password</p>
+
+<p>And pressing enter.</p>
+
+<p>Now notice how your prompt says something like root@{yourhostname}:/home/{username}#</p>
+
+<p>Be careful with everything now, because you could definitely mess it up now</p>
+
+<p>First, perform updates. Type</p>
+
+<p>apt-get update &amp;&amp; apt-get upgrade</p>
+
+<p>If there are updates, it&rsquo;ll ask you if you want to continue. Type y for yes</p>
+
+<p>This will take some time.</p>
+
+<p>Once finished, you&rsquo;ll be given your prompt. Type in </p>
+
+<p>ifconfig -a</p>
+
+<p>There will probably be 3.</p>
+
+<p>Type</p>
+
+<p>ifconfig</p>
+
+<p>There will probably be 2. Identify which one is missing with those names on the left. The one missing for me is enp0s8. If yours is different, replace accordingly in the steps that follow</p>
+
+<p>Type</p>
+
+<p>nano /etc/network/interfaces<br />
+and then press Enter</p>
+
+<p>This will open up a text editor on a specific file. You can definitely mess stuff up now, so be careful.</p>
+
+<p>In these kinds of files, the # mark comments out lines. All other lines are active. Arrow key down to the primary network interface section. On mine, there are two entries</p>
+
+<p>auto enp0s3<br />
+iface enp0s3 inet dhcp</p>
+
+<p>Go down once more, so your cursor is right underneath that last entry and type</p>
+
+<p>auto enp0s8 <br />
+iface enp0s8 inet dhcp</p>
+
+<p>Notice how the capital letter o O has nothing in it, whereas a zero 0 does. I spent way too long worrying about that.<br />
+Once finished, press control and o at the same time to Write Out. It&rsquo;ll prompt us with File Name to Write, but since we&rsquo;re editing a file, we just press Enter to save changes. Press control and X at the same time to exit.<br />
+Back to the prompt. It might work from here, but we need to allow root SSH access.<br />
+Type <br />
+nano /etc/ssh/sshd_config, <br />
+Again, this is a file where lines that start with # are comments.<br />
+Find the line that says<br />
+PermitRootLogin without-password</p>
+
+<p>And place your cursor right on the P in Permit. Comment that line out. Go to the left, so your cursor is now on the blank character after the d in password. Press enter to insert a new line after that line we just commented out</p>
+
+<p>Type<br />
+PermitRootLogin yes</p>
+
+<p>Then control and o at the same time, enter, control x.</p>
+
+<p>Back to the prompt. Type in</p>
+
+<p>service ssh restart</p>
+
+<p>Press enter</p>
+
+<p>Type<br />
+exit<br />
+to logoff. Then use your mouse to close this virtual machine. Click &ldquo;power off this machine&rdquo;. Start it again. Login using your root account (type root, then the password)<br />
+Once logged in, type ifconfig -a. Look for enp0s8 (or your version of it), and there should be, among a lot of other stuff, a inet addr with an IP address. In your regular computer, open a web browser, and type that number in. If it shows a Apache Ubuntu Default Page, it works. If not, either start over using my instructions, or spend a whole lot of time on Stack Overflow.</p>
+
+<p>***********************************</p>
+
+<p>Now that we know it works, go back into the virtual machine<br />
+That page we see on our regular computer is being served from /var/www/html/index.html . Let&rsquo;s make a new page. Type<br />
+nano /var/www/html/fun.html<br />
+Within nano, type<br />
+<p>heyyyyyyy</p><br />
+Control o to save it, control x to exit out.<br />
+Back on our regular computer, go to the web browser, type in that IP address from earlier, and then end it with <br />
+/fun.html<br />
+You should see the page you just made. Congratulations!</p>
+
+<p>***********************************<br />
+***********************************<br />
+You now have a working local development server that you can put files on and test them out on your regular computer&rsquo;s web browser. In a future video, I&rsquo;ll show how to use SSH to access your local development server from your Terminal/command-line, and how to use an FTP/SFTP client to transfer files from your regular computer to your local development server. </p>
+
+<p>If it didn&rsquo;t work, and it definitely didn&rsquo;t for me the first time, go back to your VirtualBox main screen (the VirtualBox Manager), right click your virtual machine, click Remove, Remove All Files. Go to Preferences, Network, Host-only Networks, rightclick vboxnet0, remove it. Exit VirtualBox. Find it in the Applications folder, send it to the Trash. And then start completely over. I&rsquo;m sure there is a better way of doing this, but it&rsquo;s the only way I found to work. A lot of the problem, I think, has something to do with vboxnet0, so removing it and uninstalling VirtualBox ensures that it is gone.</p>
+
+<p>Thank you to everyone who makes articles and videos like these. I&rsquo;ve read and watched your stuff,what feels like, my whole life, and this will not be the last time I give back. Thank you especially for the author and commenters of this (https://2buntu.com/articles/1513/accessing-your-virtualbox-guest-from-your-host-os/) and this (<br />
+Whether you succeeded or not, thank you for reading and watching. Please comment or email me any suggestions, corrections, and questions. lowrymchristian@gmail.com<br />
+***********************************<br />
+***********************************</p>
+
+<p></p>
+
+<p>
+</p>

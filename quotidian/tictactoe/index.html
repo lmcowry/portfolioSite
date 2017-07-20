@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Tic Tac Toe</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script src="https://use.fontawesome.com/30e8d04d9b.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- for pacifico font -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+        <div class="container text-center">
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1 class="changeFont">Tic Tac Toe</h1>
+
+            <br>
+            <br>
+
+            <div class="board" id="0">-</div>
+            <div class="board" id="1">-</div>
+            <div class="board" id="2">-</div>
+
+            <br />
+            <div class="board" id="3">-</div>
+            <div class="board" id="4">-</div>
+            <div class="board" id="5">-</div>
+            <br />
+
+            <div class="board" id="6">-</div>
+            <div class="board" id="7">-</div>
+            <div class="board" id="8">-</div>
+            <br />
+            <br />
+            <div class="changeFont" id="turnText"></div>
+            <br />
+            <button type="button" class="changeFont" id="onePlayerMode">Play against the computer</button>
+            <button type="button" class="changeFont" id="twoPlayerMode">Play against someone else</button>
+            <div id="markerChooser" hidden="true">Player 1 will be <button type="button" class="changeFont" id="player1IsX">X</button> or <button type="button" class="changeFont" id="player1IsO">O</button>?</div>
+            <div id="ruleChooser" hidden="true">Play by <button type="button" class="changeFont" id="regularRules">regular</button> or <button type="button" class="changeFont" id="oppositeRules">opposite</button> rules?</div>
+            <button type="button" class="changeFont" id="playAgain" hidden="true">Play Again?</button>
+            <br />
+            <br />
+            <button type="button" class="changeFont" id="changeColor" style="border: none">~</button>
+            <br />
+            <br />
+            <br />
+            <!-- <div class="changeFont">x&nbsp;<span id="xWinCount">0</span>&nbsp;&nbsp;o&nbsp;<span id="oWinCount">0</span></div> -->
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div>Coded as part of
+                <a class="aSpecial" href="https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game">
+                    FreeCodeCamp's</a> curriculum</div>
+
+            <div>Font from <a class="aSpecial" href="http://www.sansoxygen.com">Vernon Adams</a> via
+            <a class="aSpecial" href="https://fonts.google.com/specimen/Pacifico">Google</a></div>
+
+            <div>Todo: win counter, quick animation when computer takes turn, x's and o's different colors, <span style="text-decoration: line-through">make prettier</span>, <span style="text-decoration: line-through">1 player mode</span>, <span style="text-decoration: line-through">reverse
+                TicTacToe (goal is to NOT make 3 in a row)</span>.</div>
+
+            <div>Music while coding: <a class="aSpecial" href="https://www.youtube.com/watch?v=5-LFZQUnVN8">
+                Billy Green's Prelude to Breakfast</a></div>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div> <!--  END DIV CLASS CONTAINER -->
+
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="font-family: Helvetica Neue;">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand navbar-name changeFont" href="https://christianlowry.com/index.html">Christian Lowry</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="https://christianlowry.com/quotidian/index.html">Portfolio</a></li>
+                <li><a href="https://christianlowry.com/index.html#bio">Bio</a></li>
+                <li><a href="https://christianlowry.com/resources/resume9may17.pdf">Resume</a></li>
+                <li><a href="https://christianlowry.com/contact.html">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <script src="js/script.js"></script>
+
+    </body>
+
+
+</html>

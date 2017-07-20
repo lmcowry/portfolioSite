@@ -1,0 +1,75 @@
+.colorButtons {
+
+    display: inline-flex;
+    height: 200px;
+    width: 20px;
+    padding: 20px;
+    margin: 10px;
+    font-family: monospace;
+    border-radius: 100px;
+
+}
+
+
+
+.colorButtons:hover {
+    cursor: pointer;
+}
+
+
+
+.changeFont {
+    font-family: 'Pacifico', cursive;
+}
+
+
+
+.inactiveButtons {
+    pointer-events: none;
+    cursor: default;
+}
+
+#redButton {
+    background-color: red;
+}
+
+#greenButton {
+    background-color: green;
+}
+
+#blueButton {
+    background-color: blue;
+}
+
+#purpleButton {
+    background-color: purple;
+}
+
+.redButtonHighlight {
+    background-color: #ff6666;
+}
+.greenButtonHighlight {
+    background-color: #66b266;
+}
+.blueButtonHighlight {
+    background-color: #6666ff;
+}
+.purpleButtonHighlight {
+    background-color: #b266b2;
+}
+
+#redButton:hover {
+    background-color: #ff6666;
+}
+
+#greenButton:hover {
+    background-color: #66b266;
+}
+
+#blueButton:hover {
+    background-color: #6666ff;
+}
+
+#purpleButton:hover {
+    background-color: #b266b2;
+}

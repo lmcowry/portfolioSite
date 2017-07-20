@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Pomodoro Timer</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script src="https://use.fontawesome.com/30e8d04d9b.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- for Herr Von Muellerhoff font  -->
+        <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="changeItToCursive">Pomodoro</h1>
+            <br>
+
+            <div class="row pomSetup">
+                <div class="col-xs-10">
+                    <div class="pomForm">Work <input type="number" value="20" id="pomWorkTimeForm"></input> minutes</div>
+                    <br>
+                    <div class="pomForm">Break <input type="number" value="5" id="pomBreakTimeForm"></input> minutes</div>
+                    <br>
+                    <div class="pomForm">How many sets: <input type="number" value="5" id="pomHowManyForm"></input></div>
+                    <br>
+                    <div class="pomForm"><button type="button" class="btn btn-default" id="pomSubmit">Start Productivity</button></div>
+                </div>
+
+            </div> <!-- DIV CLASS ROW pomSetup -->
+
+            <br>
+            <br>
+            <br>
+
+
+            <!-- how to get them to line up. form-inline don't do shit -->
+            <div class="row pomClock">
+                <div class="col-xs-10">
+                    <div id="pomClockTime"></div>
+                    <div id="pomClockStats"></div>
+                    <br>
+                    <br>
+                    <!-- <button type="button" class="btn btn-warning" id="pomClockPause">Pause</button> -->
+                    <button type="button" class="btn btn-danger" id="pomClockStopReset">Stop and Reset</button>
+
+                </div>
+
+
+            </div> <!-- DIV CLASS ROW pomClock -->
+
+            <audio hidden="true" id="theAlarmAudio" controls>
+                <source src="resources/sms-alert-4-daniel_simon.mp3" type="audio/mp3">
+            </audio>
+
+
+            <br />
+            <br />
+            <div>Coded as part of <a href="https://www.freecodecamp.com/">Free Code Camp's</a> Front End Development curriculum</div>
+            <div>Music while coding: <a href="https://somafm.com/groovesalad/">Groove Salad</a></div>
+            <div>Alarm sound from <a href="https://soundbible.com/2157-Text-Message-Alert-4.html">Daniel Simion via Sound Bible</a></div>
+            <div>Font is Herr Von Muellerhoff via <a href="https://fonts.google.com/?sort=popularity&category=Handwriting&selection.family=Herr+Von+Muellerhoff">Google Fonts</a></div>
+
+            <div>Completed user stories on 1June2017</div>
+            <div>To dos: make pause button work, nake it prettier, make the alarm sound (or something else) work on mobile</div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </div><!-- DIV CLASS CONTAINER -->
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="font-family: Helvetica Neue;">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand navbar-name changeItToCursive" href="../../index.html">Christian Lowry</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html">Portfolio</a></li>
+                <li><a href="../../index.html#bio">Bio</a></li>
+                <li><a href="../../resources/resume9may17.pdf">Resume</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <script src="js/script.js"></script>
+
+    </body>
+
+
+</html>

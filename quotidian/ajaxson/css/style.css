@@ -1,0 +1,11 @@
+.inputBoxInvalidCaptcha {
+    border: 1px solid red;
+}
+
+.textInvalidCaptcha {
+    color: red;
+}
+
+.customPic {
+    margin-bottom: 2%;
+}

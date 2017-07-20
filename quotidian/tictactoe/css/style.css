@@ -1,0 +1,47 @@
+body{
+    color: white;
+}
+
+
+.aSpecial {
+    color: white;
+    text-decoration: underline;
+}
+
+.aSpecial:hover{
+    text-decoration: overline;
+    color: white;
+}
+
+button{
+    background-color: inherit;
+    border: 1px solid;
+}
+
+.board {
+
+    display: inline-flex;
+    border: 1px solid white;
+    height: 20px;
+    width: 20px;
+    padding: 20px;
+    margin: 10px;
+    font-family: monospace;
+
+}
+
+.changeFont {
+    font-family: 'Pacifico', cursive;
+}
+
+.board:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+
+.inactiveBoard {
+    pointer-events: none;
+    cursor: default;
+}
